@@ -61,10 +61,10 @@ export function SiteFooter() {
               <span className="contact-method__icon"><Mail aria-hidden="true" /></span>
               <span><small>Email</small><strong>{contact.email}</strong></span>
             </a>
-            <div className="contact-method contact-method--address">
+            <address className="contact-method contact-method--address">
               <span className="contact-method__icon"><MapPin aria-hidden="true" /></span>
               <span><small>Address</small><strong>{contact.address}</strong></span>
-            </div>
+            </address>
             <div className="contact-method contact-method--social">
               <span><small>Social</small><strong>Profiles not provided</strong></span>
               <SocialMarks />

@@ -1444,6 +1444,10 @@ a:focus-visible,
   color: #fff;
 }
 
+.contact-method--address {
+  font-style: normal;
+}
+
 .contact-method__icon {
   display: grid;
   width: 34px;
