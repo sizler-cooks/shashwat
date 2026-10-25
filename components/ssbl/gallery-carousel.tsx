@@ -48,6 +48,7 @@ export function GalleryCarousel() {
   const viewportRef = useRef<HTMLDivElement>(null)
   const firstSetRef = useRef<HTMLDivElement>(null)
   const loopWidthRef = useRef(0)
+  const movementRemainderRef = useRef(0)
   const autoPausedRef = useRef(false)
   const resumeTimerRef = useRef<number | undefined>(undefined)
   const dialogRef = useRef<HTMLDialogElement>(null)
@@ -133,7 +134,13 @@ export function GalleryCarousel() {
       const viewport = viewportRef.current
       if (!motionPreference.matches && !autoPausedRef.current && viewport) {
         const elapsed = lastFrame ? Math.min(time - lastFrame, 32) : 16
-        viewport.scrollLeft += elapsed * 0.025
+        movementRemainderRef.current += elapsed * 0.045
+        const wholePixels = Math.floor(movementRemainderRef.current)
+        if (wholePixels > 0) {
+          viewport.scrollLeft += wholePixels
+          movementRemainderRef.current -= wholePixels
+          normalizeScroll()
+        }
       }
       lastFrame = time
       frame = window.requestAnimationFrame(tick)
@@ -146,7 +153,7 @@ export function GalleryCarousel() {
         window.clearTimeout(resumeTimerRef.current)
       }
     }
-  }, [])
+  }, [normalizeScroll])
 
   const openProject = (project: AdditionalProject) => {
     setActiveProject(project)
@@ -220,8 +227,6 @@ export function GalleryCarousel() {
             tabIndex={0}
             aria-label="Scroll through all additional projects"
             onScroll={normalizeScroll}
-            onPointerEnter={pauseAuto}
-            onPointerLeave={resumeAutoSoon}
             onPointerDown={pauseAuto}
             onPointerUp={resumeAutoSoon}
             onWheel={() => {
@@ -230,7 +235,10 @@ export function GalleryCarousel() {
             }}
             onTouchStart={pauseAuto}
             onTouchEnd={resumeAutoSoon}
-            onFocusCapture={pauseAuto}
+            onFocusCapture={() => {
+              pauseAuto()
+              resumeAutoSoon()
+            }}
             onBlurCapture={resumeAutoSoon}
           >
             <div className="gallery-carousel__track">
