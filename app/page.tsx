@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/ssbl/about-section"
+import { AdditionalProjectsSection } from "@/components/ssbl/additional-projects-section"
 import { GlanceSection } from "@/components/ssbl/glance-section"
 import { HeroSection } from "@/components/ssbl/hero-section"
 import { PrestigiousProjects } from "@/components/ssbl/prestigious-projects"
@@ -19,6 +20,7 @@ export default function HomePage() {
         <GlanceSection />
         <ServicesSection />
         <PrestigiousProjects />
+        <AdditionalProjectsSection />
         <TrustedBy />
       </main>
       <SiteFooter />

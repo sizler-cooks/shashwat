@@ -52,19 +52,32 @@ export function GalleryCarousel() {
   const resumeTimerRef = useRef<number | undefined>(undefined)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [activeProject, setActiveProject] = useState<AdditionalProject | null>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
   const [loopReady, setLoopReady] = useState(false)
+  const projects = additionalProjects
 
   const normalizeScroll = useCallback(() => {
     const viewport = viewportRef.current
     const width = loopWidthRef.current
-    if (!viewport || width <= 0) return
+    if (!viewport || width <= 0 || projects.length === 0) return
 
     if (viewport.scrollLeft >= width * 2) {
       viewport.scrollLeft -= width
     } else if (viewport.scrollLeft < width) {
       viewport.scrollLeft += width
     }
-  }, [])
+
+    const firstCard = viewport.querySelector<HTMLElement>(".gallery-card")
+    const cardSet = firstCard?.parentElement
+    const cardGap = cardSet
+      ? Number.parseFloat(window.getComputedStyle(cardSet).gap) || 18
+      : 18
+    const cardDistance = (firstCard?.offsetWidth ?? 340) + cardGap
+    const offsetInSet = ((viewport.scrollLeft - width) % width + width) % width
+    const nextIndex = Math.floor((offsetInSet + cardDistance * 0.2) / cardDistance) % projects.length
+
+    setActiveIndex((currentIndex) => (currentIndex === nextIndex ? currentIndex : nextIndex))
+  }, [projects.length])
 
   const pauseAuto = useCallback(() => {
     autoPausedRef.current = true
@@ -164,8 +177,6 @@ export function GalleryCarousel() {
     })
   }
 
-  const projects = additionalProjects
-
   return (
     <>
       <div
@@ -176,7 +187,12 @@ export function GalleryCarousel() {
         data-loop-ready={loopReady}
       >
         <div className="gallery-carousel__controls">
-          <p><span>11</span> additional projects</p>
+          <p>
+            <span>{projects.length}</span> additional projects
+            <small className="gallery-carousel__position" aria-live="polite">
+              {String(activeIndex + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+            </small>
+          </p>
           <div className="gallery-carousel__arrows">
             <button
               className="carousel-arrow"
