@@ -22,7 +22,7 @@ export function HeroSection() {
               Explore projects <ArrowRight aria-hidden="true" />
             </a>
             <a className="button button--quiet" href="#about">
-              About SSBL <ArrowUpRight aria-hidden="true" />
+              About SSBPL <ArrowUpRight aria-hidden="true" />
             </a>
           </div>
         </Reveal>

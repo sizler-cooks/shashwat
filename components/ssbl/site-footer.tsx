@@ -49,7 +49,7 @@ export function SiteFooter() {
         <div className="container contact-strip__inner">
           <div className="contact-strip__heading">
             <p className="eyebrow eyebrow--light">Contact</p>
-            <h2 id="contact-title">Talk to SSBL</h2>
+            <h2 id="contact-title">Talk to SSBPL</h2>
             <p>Shashwat Samya Buildcon Private Limited</p>
           </div>
           <div className="contact-strip__details">
@@ -78,8 +78,8 @@ export function SiteFooter() {
           <div className="footer-brand">
             <Link href="/" className="footer-brand__logo">
               <Image
-                src="/assets/ssbl_logo.png"
-                alt="Shashwat Samya Buildcon Private Limited"
+                src="/assets/ssbl_logo_transparent.png"
+                alt="SSBPL logo"
                 width={200}
                 height={80}
               />

@@ -7,7 +7,7 @@ export function AboutSection() {
     <section className="section about-section" id="about" aria-labelledby="about-title">
       <div className="container about-layout">
         <Reveal direction="left" className="about-copy">
-          <p className="eyebrow eyebrow--light">About SSBL</p>
+          <p className="eyebrow eyebrow--light">About SSBPL</p>
           <h2 className="section-title section-title--light" id="about-title">
             About Us
           </h2>

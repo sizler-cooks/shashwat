@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/ssbl/site-header"
 import { Reveal } from "@/components/ssbl/reveal"
 
 export const metadata: Metadata = {
-  title: "Additional Projects | SSBL",
+  title: "Additional Projects | SSBPL",
   description: "Additional projects from Shashwat Samya Buildcon Private Limited.",
 }
 
@@ -19,7 +19,7 @@ export default function GalleryPage() {
             <Reveal direction="left">
               <p className="eyebrow eyebrow--light">Project gallery</p>
               <h1 id="gallery-title">Additional Projects</h1>
-              <p>Eleven additional projects from the SSBL portfolio.</p>
+              <p>Eleven additional projects from the SSBPL portfolio.</p>
             </Reveal>
           </div>
         </section>

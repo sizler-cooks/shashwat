@@ -29,8 +29,8 @@ export function SiteHeader() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/assets/ssbl_logo.png"
-            alt="Shashwat Samya Buildcon Private Limited"
+            src="/assets/ssbl_logo_transparent.png"
+            alt="SSBPL logo"
             width={200}
             height={80}
             priority

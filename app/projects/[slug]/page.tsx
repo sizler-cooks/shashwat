@@ -13,10 +13,10 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const { slug } = await params
   const project = prestigiousProjects.find((item) => item.slug === slug)
 
-  if (!project) return { title: "Project Not Found | SSBL" }
+  if (!project) return { title: "Project Not Found | SSBPL" }
 
   return {
-    title: `${project.name} | SSBL`,
+    title: `${project.name} | SSBPL`,
     description: project.description,
   }
 }

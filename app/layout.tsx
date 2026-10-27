@@ -3,12 +3,12 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'SSBL | Shashwat Samya Buildcon',
+  title: 'SSBPL | Shashwat Samya Buildcon',
   description:
     'Empowering Smart, Scalable, and Sustainable Technology. Shashwat Samya Buildcon delivers engineering and infrastructure solutions across India.',
   icons: {
-    icon: '/assets/ssbl_logo.png',
-    apple: '/assets/ssbl_logo.png',
+    icon: '/assets/ssbl_logo_transparent.png',
+    apple: '/assets/ssbl_logo_transparent.png',
   },
 }
 

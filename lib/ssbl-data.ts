@@ -23,7 +23,7 @@ export type AdditionalProject = {
 
 export const company = {
   legalName: "Shashwat Samya Buildcon Private Limited",
-  shortName: "SSBL",
+  shortName: "SSBPL",
   established: "2021",
   heroVision: "Empowering Smart, Scalable, and Sustainable Technology",
   heroSubline:
@@ -458,7 +458,7 @@ export const technologyPartners = [
 ]
 
 export const contact = {
-  address: "Flat No. 167, Cooperative Colony, Bokaro Steel City, Jharkhand",
+  address: "T1, Unit 508 Office Space NXone, Techzone 4, Plot No. 17, Greater Noida West, near Gaur City Mall 201306",
   phone: "+91 9204756617",
   phoneHref: "tel:+919204756617",
   email: "shashwatsamya@gmail.com",

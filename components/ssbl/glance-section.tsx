@@ -8,7 +8,7 @@ export function GlanceSection() {
       <div className="container">
         <div className="glance-heading-row">
           <Reveal direction="up" className="section-heading section-heading--wide glance-heading">
-            <p className="eyebrow">SSBL at a glance</p>
+            <p className="eyebrow">SSBPL at a glance</p>
             <h2 className="section-title" id="glance-title">
               At a Glance
             </h2>

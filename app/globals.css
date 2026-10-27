@@ -1394,7 +1394,7 @@ a:focus-visible,
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Talk to SSBL and footer */
+/* Talk to SSBPL and footer */
 .contact-strip {
   scroll-margin-top: 82px;
   background: var(--ssbl-navy-soft);
@@ -1532,7 +1532,6 @@ a:focus-visible,
   display: inline-flex;
   width: 190px;
   margin-bottom: 17px;
-  background: #fff;
 }
 
 .footer-brand__logo img {
